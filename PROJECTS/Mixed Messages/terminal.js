@@ -39,23 +39,30 @@ const terminal = {
             if (key === this.workingDirectory && value === file) {
                 this.stagingArea.push(value);
             }
-        },
-        gitAddDot() {
-            for (const [key, value] in Object.entries(this.Files)) {
-                if (key === this.workingDirectory) {
-                    this.stagingArea.push(value);
-                }
+        }
+    },
+    gitAddDot() {
+        for (const [key, value] in Object.entries(this.Files)) {
+            if (key === this.workingDirectory) {
+                this.stagingArea.push(value);
             }
         }
-        gitStatus() {
-            let trackedList = this.stagingArea;
-            let untrackedList = [];
-            for (const [key, value] in Object.entries(this.Files)) {
-                if (!this.stagingArea.includes(value)) {
-                    untrackedList.push(value);
-                }
+    },
+    gitStatus() {
+        let trackedList = this.stagingArea;
+        let untrackedList = [];
+        for (const [key, value] in Object.entries(this.Files)) {
+            if (!this.stagingArea.includes(value)) {
+                untrackedList.push(value);
             }
-            return `Tracked items: ${trackedList}. Untracked items: ${untrackedList}.`;
-        },
+        }
+        return `Tracked items: ${trackedList}. Untracked items: ${untrackedList}.`;
+    },
+    gitResetHEAD() {
+        for (const [key, value] in Object.entries(this.Files)) {
+            if (key === this.workingDirectory && this.stagingArea.includes(value)) {
+                this.stagingArea.shift();
+            }
+        }
     }
 }
