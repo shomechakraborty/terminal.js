@@ -69,7 +69,8 @@ const terminal = {
             SHA,
             itemsCommited
         })
-        'HEAD': this.commitedItems[this.commitedItems.length - 1]
+        this.gitResetHEAD()
+        this.HEAD: this.commitedItems[this.commitedItems.length - 1]
     },
     gitLog() {
         return this.commitedItems
@@ -77,7 +78,7 @@ const terminal = {
     gitReset(SHA) {
         for (const commitedObject of this.commitedItems) {
             if (commitedObject.SHA === SHA) {
-                'HEAD': commitedObject;
+                this.HEAD: commitedObject;
             }
         }
     }
