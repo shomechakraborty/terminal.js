@@ -1,68 +1,75 @@
 const terminal = {
-    'Directories': {
-        'Directory1': 'Welcome',
-    },
-    'Files': {
-        this.Directories.Directory1: 'HelloFile',
-    },
-    'workingDirectory': this.Directories.Directory1,
-    'stagingArea': [],
-    'commitedItems': [],
-    pwd() {
-        return this.workingDirectory;
-    },
-    mkdir(directory) {
-        let numOfDirectories = Object.entries(this.Directories).length;
-        this.Directories.push('Directory' + numOfDirectories: directory)
-    },
-    cd(directory) {
-        for (const [key, value] in Object.entries(this.Directories)) {
-            if (value === directory) {
-                this.workingDirectory: value
+        'Directories': {
+            'Welcome': {
+                'Helloworld'
+            },
+        },
+        'workingDirectory': this.Directories.Welcome,
+        'stagingArea': [],
+        'commitedItems': [],
+        pwd() {
+            return this.workingDirectory;
+        },
+        mkdir(directory) {
+            this.Directories.push(directory {
+
+            }, )
+        },
+        cd(directory) {
+            if (this.Directories.directory === true) {
+                this.workingDirectory: directory;
+            } else {
+                return 'No such directory exists.'
             }
-        }
-    },
-    touch(file) {
-        this.Files.push(this.workingDirectory: file)
-    },
-    ls() {
-        let returnList = [];
-        for (const [key, value] in Object.entries(this.Files)) {
-            if (key === this.workingDirectory) {
-                returnList.push(value);
+        },
+        touch(file) {
+            let directory = this.workingDirectory;
+            directory.push(file);
+        },
+        ls() {
+            let directory = this.workingDirectory;
+            return directory;
+        },
+        gitAdd(file) {
+            let directory = this.workingDirectory;
+            if (directory.file === true) {
+                this.stagingArea.push(file);
             }
-        }
-        return returnedList;
-    },
-    gitAdd(file) {
-        for (const [key, value] in Object.entries(this.Files)) {
-            if (key === this.workingDirectory && value === file) {
-                this.stagingArea.push(value);
+        },
+        gitAddDot() {
+            let directory = this.workingDirectory;
+            this.stagingArea.push(directory);
+        },
+        gitStatus() {
+            let trackedList = this.stagingArea;
+            let untrackedList = [];
+            for (const directory of this.directories) {
+                for (const file of directory) {
+                    if (!this.stagingArea.includes(file)) {
+                        untrackedList.push(file);
+                    }
+                }
             }
-        }
-    },
-    gitAddDot() {
-        for (const [key, value] in Object.entries(this.Files)) {
-            if (key === this.workingDirectory) {
-                this.stagingArea.push(value);
-            }
-        }
-    },
-    gitStatus() {
-        let trackedList = this.stagingArea;
-        let untrackedList = [];
-        for (const [key, value] in Object.entries(this.Files)) {
-            if (!this.stagingArea.includes(value)) {
-                untrackedList.push(value);
-            }
-        }
-        return `Tracked items: ${trackedList}. Untracked items: ${untrackedList}.`;
-    },
-    gitResetHEAD() {
-        for (const [key, value] in Object.entries(this.Files)) {
-            if (key === this.workingDirectory && this.stagingArea.includes(value)) {
+            return `Tracked items: ${trackedList}. Untracked items: ${untrackedList}`;
+        },
+        gitResetHEAD() {
+            for (i = this.stagingArea.length; i > 0; i--) {
                 this.stagingArea.shift();
             }
+        },
+        gitCommit(message) {
+            let SHA = 0
+            for (i = 0; i < 7; i++) {
+                SHA += Math.floor(Math.random() * 9);
+            }
+            let message = message;
+            let items = this.stagingArea;
+            this.commitedItems.push({
+                "Message": message,
+                "SHA": SHA,
+                "Items commited": items
+            })
         }
-    }
+
+    },
 }
