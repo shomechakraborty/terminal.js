@@ -51,7 +51,7 @@ const terminal = {
                 }
             }
         }
-        return `Changes to be commited: ${trackedList}. Untracked items: ${untrackedList}`;
+        return `Changes to be committed: ${trackedList}. Untracked items: ${untrackedList}`;
     },
     gitResetHEAD() {
         for (let i = this.stagingArea.length; i > 0; i--) {
@@ -83,3 +83,5 @@ const terminal = {
         }
     }
 }
+
+terminal.gitStatus();
