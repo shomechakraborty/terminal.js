@@ -16,6 +16,11 @@ const terminal = {
 
         }, )
     },
+    removeDirectory(directory) {
+        if (this.Directories.directory === true) {
+            directory.remove();
+        }
+    },
     cd(directory) {
         if (this.Directories.directory === true) {
             this.workingDirectory = directory;
@@ -26,6 +31,12 @@ const terminal = {
     touch(file) {
         let directory = this.workingDirectory;
         directory.push(file);
+    },
+    removeFile(file) {
+        let directory = this.workingDirectory
+        if (directory.file === true) {
+            file.remove();
+        }
     },
     ls() {
         let directory = this.workingDirectory;
