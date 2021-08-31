@@ -54,13 +54,13 @@ const terminal = {
         return `Changes to be commited: ${trackedList}. Untracked items: ${untrackedList}`;
     },
     gitResetHEAD() {
-        for (i = this.stagingArea.length; i > 0; i--) {
+        for (let i = this.stagingArea.length; i > 0; i--) {
             this.stagingArea.shift();
         }
     },
     gitCommit(Message) {
         let SHA = 0
-        for (i = 0; i < 7; i++) {
+        for (let i = 0; i < 7; i++) {
             SHA += Math.floor(Math.random() * 9);
         }
         let itemsCommited = this.stagingArea;
