@@ -1,24 +1,24 @@
 const terminal = {
     'Directories': {
         'Welcome': {
-            'Helloworld'
-        },
+            'Helloworld': null
+        }
     },
     'workingDirectory': this.Directories.Welcome,
     'stagingArea': [],
     'commitedItems': [],
-    'HEAD': this.commitedItems[this.commitedItems.length - 1];
+    'HEAD': this.commitedItems[this.commitedItems.length - 1],
     pwd() {
         return this.workingDirectory;
     },
     mkdir(directory) {
-        this.Directories.push(directory {
+        this.Directories.push(directory = {
 
         }, )
     },
     cd(directory) {
         if (this.Directories.directory === true) {
-            this.workingDirectory: directory;
+            this.workingDirectory = directory;
         } else {
             return 'No such directory exists.'
         }
@@ -70,7 +70,7 @@ const terminal = {
             itemsCommited
         })
         this.gitResetHEAD()
-        this.HEAD: this.commitedItems[this.commitedItems.length - 1]
+        this.HEAD = this.commitedItems[this.commitedItems.length - 1]
     },
     gitLog() {
         return this.commitedItems
@@ -78,7 +78,7 @@ const terminal = {
     gitReset(SHA) {
         for (const commitedObject of this.commitedItems) {
             if (commitedObject.SHA === SHA) {
-                this.HEAD: commitedObject;
+                this.HEAD = commitedObject;
             }
         }
     }
