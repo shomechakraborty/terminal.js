@@ -42,6 +42,10 @@ const terminal = {
         let directory = this.workingDirectory;
         return directory;
     },
+    addWorkingFile(file) {
+        let directory = this.workingDirectory;
+        directory.push(file);
+    }
     gitAdd(file) {
         let directory = this.workingDirectory;
         if (directory.file === true) {
@@ -50,7 +54,9 @@ const terminal = {
     },
     gitAddDot() {
         let directory = this.workingDirectory;
-        this.stagingArea.push(directory);
+        for (const file of directory) {
+            this.stagingArea.push(file);
+        }
     },
     gitStatus() {
         let trackedList = this.stagingArea;
