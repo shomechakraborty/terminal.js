@@ -8,6 +8,7 @@ const terminal = {
     'stagingArea': [],
     'commitedItems': [],
     'HEAD': this.commitedItems[this.commitedItems.length - 1],
+    'workingFile': '',
     pwd() {
         return this.workingDirectory;
     },
@@ -43,6 +44,7 @@ const terminal = {
         return directory;
     },
     addWorkingFile(file) {
+        this.workingFile = file
         let directory = this.workingDirectory;
         directory.push(file);
     }
@@ -80,14 +82,22 @@ const terminal = {
         for (let i = 0; i < 7; i++) {
             SHA += Math.floor(Math.random() * 9);
         }
-        let itemsCommited = this.stagingArea;
+        let filesCommited = this.stagingArea;
         this.commitedItems.push({
             Message,
             SHA,
-            itemsCommited
+            filesCommited
         })
         this.gitResetHEAD()
         this.HEAD = this.commitedItems[this.commitedItems.length - 1]
+    },
+    gitCheckoutHEAD() {
+        let lastCommit = this.commitedItems[this.commitedItems.length - 1];
+        for (const file of lastCommit) {
+            if (file === this.workingFile) {
+                this.workingFile = file;
+            }
+        }
     },
     gitLog() {
         return this.commitedItems
@@ -101,4 +111,3 @@ const terminal = {
     }
 }
 
-terminal.gitStatus();
