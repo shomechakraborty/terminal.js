@@ -47,7 +47,7 @@ const terminal = {
         this.workingFile = file
         let directory = this.workingDirectory;
         directory.push(file);
-    }
+    },
     gitAdd(file) {
         let directory = this.workingDirectory;
         if (directory.file === true) {
