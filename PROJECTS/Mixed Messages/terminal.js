@@ -4,22 +4,24 @@ const terminal = {
             'Helloworld': null
         }
     },
-    'workingDirectory': this.Directories.Welcome,
+    'workingDirectory': null,
     'stagingArea': [],
     'commitedItems': [],
-    'HEAD': this.commitedItems[this.commitedItems.length - 1],
+    'HEAD': null,
     'workingFile': '',
     pwd() {
         return this.workingDirectory;
     },
     mkdir(directory) {
-        this.Directories.push(directory = {
-
-        }, )
+      let existingDirectory = this.Directories
+      let dir = directory = {};
+      this.Directories = existingDirectory + dir;
     },
     removeDirectory(directory) {
         if (this.Directories.directory === true) {
             directory.remove();
+        } else {
+          return 'No such directory exists.'
         }
     },
     cd(directory) {
@@ -30,18 +32,17 @@ const terminal = {
         }
     },
     touch(file) {
-        let directory = this.workingDirectory;
-        directory.push(file);
+        this.workingDirectory.push(directory.push(file));
     },
     removeFile(file) {
-        let directory = this.workingDirectory
-        if (directory.file === true) {
+        if (this.workingDirectory.file === true) {
             file.remove();
+        } else {
+          return 'No such file exists.'
         }
     },
     ls() {
-        let directory = this.workingDirectory;
-        return directory;
+        return this.workingDirectory;
     },
     addWorkingFile(file) {
         this.workingFile = file
@@ -49,21 +50,19 @@ const terminal = {
         directory.push(file);
     },
     gitAdd(file) {
-        let directory = this.workingDirectory;
-        if (directory.file === true) {
+        if (this.workingDirectory.file === true) {
             this.stagingArea.push(file);
         }
     },
     gitAddDot() {
-        let directory = this.workingDirectory;
-        for (const file of directory) {
+        for (const file of this.workingDirectory) {
             this.stagingArea.push(file);
         }
     },
     gitStatus() {
         let trackedList = this.stagingArea;
         let untrackedList = [];
-        for (const directory of this.directories) {
+        for (const directory in this.directories) {
             for (const file of directory) {
                 if (!this.stagingArea.includes(file)) {
                     untrackedList.push(file);
@@ -111,3 +110,4 @@ const terminal = {
     }
 }
 
+console.log(terminal.pwd());
