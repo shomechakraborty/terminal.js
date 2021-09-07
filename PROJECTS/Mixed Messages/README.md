@@ -10,15 +10,15 @@ Table of contents:
   5. [Why did I make terminal.js?](#Why-did-I-make-terminal.js?:)
   6. [How you can help terminal.js](#How-you-can-help-terminal.js:)
 
-##What is terminal.js?:
+## What is terminal.js?:
 
 Terminal.js is a terminal application you can use to make, edit, and delete directories and files as well as make git commands. 
 It's application should be used to make and delete directories, print the working directory, change the working directory, list the files of the working directory, have git commands that add files to the staging area, show the status of tracked and untracked files, reset the staging area, make commits, and reset commits. 
 
-##Technology:
+## Technology:
 This application was made with javascript. I did intergrate configuration files like jsconfig.json and launch.json as well. The application was built from Visual Studio Code.
 
-##Functionalities:
+## Functionalities:
 My terminal object creates methods for some of the commands in a terminal, including git commands. Here are these methods:
 
 1. terminal.pwd()
@@ -42,7 +42,7 @@ These methods should resonate to the commands you would know, including git comm
 
 **Note-** I do add some methods to the terminal application which may not be commands you may know of.
 
-##Launching:
+## Launching:
 
 If you do want to open this application, you should do the following:
 1. Add the files in this repository to a folder in your computer
@@ -56,9 +56,9 @@ If you don't have node, then you must go to the node website, download the versi
 If you so choose, you can also try to add this code to visual studio code to debug. How debug can be found in this article:
 [Debugging in Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
 
-##Why did I make terminal.js?:
+## Why did I make terminal.js?:
 I made terminal.js to fufill the Mixed Messages project in the Codecademy Full Stack Engineer Course. I learned from the material of this course before coming to this project to make terminal.js.
 
-##How you can help terminal.js:
+## How you can help terminal.js:
 I am a beginner learner in coding, and so, for that reason, I cannot spend too much time on the project so that I can learn new material. I am sure that there are bugs in this mistake, so I'm using this as an opportunity for anyone who wants to comment on anything there is to fix for this application and any new ideas. Please comment on anything you belive can help, and I will use your suggestions to learn and fix the application. And of course, you are free to use and build from this code if you wish. You can use my code however you deem is best. If you do use my code for a publication of yours, I would like for you to also include me in your source.
 Thank you.
