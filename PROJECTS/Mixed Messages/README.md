@@ -53,9 +53,12 @@ If you don't have node, then you must go to the node website, download the versi
 4. Use `.load` to run terminal.js methods. For example, if I wanted to run `terminal.pwd()`, I would type:
 `.load ./terminal.pwd()`
 
+If you so choose, you can also try to add this code to visual studio code to debug. How debug can be found in this article:
+[Debugging in Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
+
 ##Why did I make terminal.js?:
 I made terminal.js to fufill the Mixed Messages project in the Codecademy Full Stack Engineer Course. I learned from the material of this course before coming to this project to make terminal.js.
 
 ##How you can help terminal.js:
-I am a beginner learner in coding, and so, for that reason, I cannot spend too much time on the project so that I can learn new material. I am sure that there are bugs in this mistake, so I'm using this as an opportunity for anyone who wants to comment on anything there is to fix for this application and any new ideas. Please comment on anything you belive can help, and I will use your suggestions to learn and fix the application. And of course, you are free to use and build from this code if you wish.
+I am a beginner learner in coding, and so, for that reason, I cannot spend too much time on the project so that I can learn new material. I am sure that there are bugs in this mistake, so I'm using this as an opportunity for anyone who wants to comment on anything there is to fix for this application and any new ideas. Please comment on anything you belive can help, and I will use your suggestions to learn and fix the application. And of course, you are free to use and build from this code if you wish. You can use my code however you deem is best. If you do use my code for a publication of yours, I would like for you to also include me in your source.
 Thank you.
