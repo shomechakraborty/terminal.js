@@ -40,7 +40,7 @@ My terminal object creates methods for some of the commands in a terminal, inclu
 
 These methods should resonate to the commands you would know, including git commands.
 
-**Note-** I do add some methods to the terminal application which may not be commands you may know of.
+**Note -** I do add some methods to the terminal application which may not be commands you may know of.
 
 ## Launching:
 
