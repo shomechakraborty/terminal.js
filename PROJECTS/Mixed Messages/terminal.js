@@ -71,25 +71,6 @@ const terminal = {
         }
         return `Changes to be committed: ${trackedList}. Untracked items: ${untrackedList}`;
     },
-    gitResetHEAD() {
-        for (let i = this.stagingArea.length; i > 0; i--) {
-            this.stagingArea.shift();
-        }
-    },
-    gitCommit(Message) {
-        let SHA = 0
-        for (let i = 0; i < 7; i++) {
-            SHA += Math.floor(Math.random() * 9);
-        }
-        let filesCommited = this.stagingArea;
-        this.commitedItems.push({
-            Message,
-            SHA,
-            filesCommited
-        })
-        this.gitResetHEAD()
-        this.HEAD = this.commitedItems[this.commitedItems.length - 1]
-    },
     gitCheckoutHEAD() {
         let lastCommit = this.commitedItems[this.commitedItems.length - 1];
         for (const file of lastCommit) {
@@ -97,6 +78,25 @@ const terminal = {
                 this.workingFile = file;
             }
         }
+    },
+    gitResetHEAD() {
+        for (let i = this.stagingArea.length; i > 0; i--) {
+            this.stagingArea.shift();
+        }
+    },
+    gitCommit(message) {
+        let SHA = 0
+        for (let i = 0; i < 7; i++) {
+            SHA += Math.floor(Math.random() * 9);
+        }
+        let filesCommited = this.stagingArea;
+        this.commitedItems.push({
+            message,
+            SHA,
+            filesCommited
+        })
+        this.gitResetHEAD()
+        this.HEAD = this.commitedItems[this.commitedItems.length - 1]
     },
     gitLog() {
         return this.commitedItems
