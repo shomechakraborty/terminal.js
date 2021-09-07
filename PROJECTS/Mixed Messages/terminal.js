@@ -109,5 +109,3 @@ const terminal = {
         }
     }
 }
-
-console.log(terminal.pwd());
