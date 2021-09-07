@@ -48,12 +48,11 @@ If you do want to open this application, you should do the following:
 1. Add the files in this repository to a folder in your computer
 2. Access the folder in the terminal or other command line in your computer
 3. Open node in your computer by just typing:
-`node`
-If you don't have node, then you must go to the node website, download the version of node you prefer from there, and then type the above in the command line.
+` node`. If you don't have node, then you must go to the node website, download the version of node you prefer from there, and then type `node` in the command     line.
 4. Use `.load` to run terminal.js methods. For example, if I wanted to run `terminal.pwd()`, I would type:
 `.load ./terminal.pwd()`
 
-If you so choose, you can also try to add this code to visual studio code to debug. How debug can be found in this article:
+If you so choose, you can also try to add this code to visual studio code to debug. How  to debug in VS Code can be found in this article:
 [Debugging in Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
 
 ## Why did I make terminal.js?:
