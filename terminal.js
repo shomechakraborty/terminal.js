@@ -55,9 +55,7 @@ const terminal = {
         }
     },
     gitAddDot() {
-        for (const file of this.workingDirectory) {
-            this.stagingArea.push(file);
-        }
+        this.workingDirectory.forEach(file => this.stagingArea.push(file));
     },
     gitStatus() {
         let trackedList = this.stagingArea;
@@ -69,7 +67,7 @@ const terminal = {
                 }
             }
         }
-        return `Changes to be committed: ${trackedList}. Untracked items: ${untrackedList}`;
+        return `Changes to be committed: ${trackedList}. Untracked items: ${untrackedList}.`;
     },
     gitCheckoutHEAD() {
         let lastCommit = this.commitedItems[this.commitedItems.length - 1];
